@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&display=swap');
+
+:root{
+    --clr-primary-700: hsl(158, 36%, 17%);
+    --clr-primary-400: hsl(158, 36%, 37%);
+    --clr-secondary-200: hsl(30, 38%, 92%);
+
+    --clr-neutral-900: hsl(212, 21%, 14%);
+    --clr-neutral-400: hsl(228, 12%, 48%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+
+    --ff-accent: "Fraunces", serif;
+    --ff-base: "Montserrat", sans-serif;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+#root, #__next {
+    isolation: isolate;
+}
+
+/* Utility Classes */
+
+.flex-group{
+    display: flex;
+    align-items: center;
+}
+
+body{
+    background-color: var(--clr-secondary-200);
+    color: var(--clr-neutral-400);
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+    font-size: 0.875rem;
+
+    display: grid;
+    place-content: center;
+    
+}
+
+.pdtPreviewCard{
+    margin: 1.2rem;
+    background-color: var(--clr-neutral-100);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    max-width: 600px;
+}
+
+.pdtDetails{
+    display: grid;
+    padding: 1.5rem;
+    gap: 0.8rem;
+}
+
+.pdtType{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.8rem;
+}
+
+.pdtName{
+    font-family: var(--ff-accent);
+    font-size: 2rem;
+    font-weight: var(--fw-bold);
+    color: var(--clr-neutral-900);
+    line-height: 1;
+
+}
+
+.pdtDescription{
+    /* line-height: 1.5; */
+}
+
+.pdtPrice{
+    gap: 1rem;
+}
+
+.pdtNewPrice{
+    color: var(--clr-primary-400);
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    font-weight: var(--fw-bold);
+}
+
+.pdtOldPrice{
+    text-decoration: line-through;
+}
+
+.addToCartBtn{
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--clr-primary-400);
+    color: var(--clr-neutral-100);
+    font-size: 0.9rem;
+    font-weight: var(--fw-bold);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.addToCartBtn:is(:hover , :focus){
+    background-color: var(--clr-primary-700);
+}
+
+.addToCartBtn[data-icon="shopping-cart"]::before{
+    content: "";
+    background-image: url("images/icon-cart.svg");
+    width: 15px;
+    height: 16px;
+}
+
+@media (min-width: 600px){
+    .pdtPreviewCard{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pdtDetails{
+        padding: 2rem;
+    }
+}
