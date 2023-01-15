@@ -28,7 +28,7 @@
     margin: 0;
 }
 html, body {
-    height: 100%;
+    min-height: 100vh;
 }
 body {
     line-height: 1.5;
@@ -96,10 +96,6 @@ body{
 
 }
 
-.pdtDescription{
-    /* line-height: 1.5; */
-}
-
 .pdtPrice{
     gap: 1rem;
 }
@@ -128,6 +124,7 @@ body{
     align-items: center;
     gap: 0.75rem;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .addToCartBtn:is(:hover , :focus){
